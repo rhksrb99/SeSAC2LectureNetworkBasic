@@ -13,6 +13,13 @@
 		9275F57E2890DD8200D9EA46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9275F57C2890DD8200D9EA46 /* Main.storyboard */; };
 		9275F5802890DD8400D9EA46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9275F57F2890DD8400D9EA46 /* Assets.xcassets */; };
 		9275F5832890DD8400D9EA46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9275F5812890DD8400D9EA46 /* LaunchScreen.storyboard */; };
+		9275F58B2890E20300D9EA46 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9275F58A2890E20300D9EA46 /* SearchViewController.swift */; };
+		9275F58E2890E4D400D9EA46 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9275F58C2890E4D400D9EA46 /* ListTableViewCell.swift */; };
+		9275F58F2890E4D400D9EA46 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9275F58D2890E4D400D9EA46 /* ListTableViewCell.xib */; };
+		92E9DF3A28920CD8004A7A07 /* ViewPresentableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E9DF3928920CD8004A7A07 /* ViewPresentableProtocol.swift */; };
+		92E9DF3C2892236E004A7A07 /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E9DF3B2892236E004A7A07 /* LottoViewController.swift */; };
+		92E9DF3E2892306A004A7A07 /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E9DF3D2892306A004A7A07 /* TranslateViewController.swift */; };
+		92E9DF4028923AA6004A7A07 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E9DF3F28923AA6004A7A07 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,13 @@
 		9275F57F2890DD8400D9EA46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9275F5822890DD8400D9EA46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9275F5842890DD8400D9EA46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9275F58A2890E20300D9EA46 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		9275F58C2890E4D400D9EA46 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		9275F58D2890E4D400D9EA46 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
+		92E9DF3928920CD8004A7A07 /* ViewPresentableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresentableProtocol.swift; sourceTree = "<group>"; };
+		92E9DF3B2892236E004A7A07 /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
+		92E9DF3D2892306A004A7A07 /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
+		92E9DF3F28923AA6004A7A07 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +54,7 @@
 		9275F56A2890DD8200D9EA46 = {
 			isa = PBXGroup;
 			children = (
+				92E9DF3828920CA3004A7A07 /* Protocol */,
 				9275F5752890DD8200D9EA46 /* SeSAC2LectureNetworkBasic */,
 				9275F5742890DD8200D9EA46 /* Products */,
 			);
@@ -60,11 +75,25 @@
 				9275F5782890DD8200D9EA46 /* SceneDelegate.swift */,
 				9275F57A2890DD8200D9EA46 /* ViewController.swift */,
 				9275F57C2890DD8200D9EA46 /* Main.storyboard */,
+				92E9DF3F28923AA6004A7A07 /* WebViewController.swift */,
+				92E9DF3D2892306A004A7A07 /* TranslateViewController.swift */,
+				92E9DF3B2892236E004A7A07 /* LottoViewController.swift */,
+				9275F58C2890E4D400D9EA46 /* ListTableViewCell.swift */,
+				9275F58D2890E4D400D9EA46 /* ListTableViewCell.xib */,
+				9275F58A2890E20300D9EA46 /* SearchViewController.swift */,
 				9275F57F2890DD8400D9EA46 /* Assets.xcassets */,
 				9275F5812890DD8400D9EA46 /* LaunchScreen.storyboard */,
 				9275F5842890DD8400D9EA46 /* Info.plist */,
 			);
 			path = SeSAC2LectureNetworkBasic;
+			sourceTree = "<group>";
+		};
+		92E9DF3828920CA3004A7A07 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				92E9DF3928920CD8004A7A07 /* ViewPresentableProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9275F5832890DD8400D9EA46 /* LaunchScreen.storyboard in Resources */,
+				9275F58F2890E4D400D9EA46 /* ListTableViewCell.xib in Resources */,
 				9275F5802890DD8400D9EA46 /* Assets.xcassets in Resources */,
 				9275F57E2890DD8200D9EA46 /* Main.storyboard in Resources */,
 			);
@@ -139,8 +169,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9275F57B2890DD8200D9EA46 /* ViewController.swift in Sources */,
+				92E9DF4028923AA6004A7A07 /* WebViewController.swift in Sources */,
 				9275F5772890DD8200D9EA46 /* AppDelegate.swift in Sources */,
+				9275F58B2890E20300D9EA46 /* SearchViewController.swift in Sources */,
+				92E9DF3C2892236E004A7A07 /* LottoViewController.swift in Sources */,
 				9275F5792890DD8200D9EA46 /* SceneDelegate.swift in Sources */,
+				92E9DF3E2892306A004A7A07 /* TranslateViewController.swift in Sources */,
+				92E9DF3A28920CD8004A7A07 /* ViewPresentableProtocol.swift in Sources */,
+				9275F58E2890E4D400D9EA46 /* ListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
