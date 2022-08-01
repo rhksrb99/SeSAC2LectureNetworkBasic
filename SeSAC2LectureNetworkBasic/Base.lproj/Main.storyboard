@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VUD-yv-P2h">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yr9-f7-l0z">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -124,6 +124,13 @@
                     </view>
                     <connections>
                         <outlet property="tf_number" destination="Fka-di-JDU" id="SrV-xV-AWI"/>
+                        <outletCollection property="lottoNumber" destination="Tbh-OW-fw2" collectionClass="NSMutableArray" id="jKm-w5-ozg"/>
+                        <outletCollection property="lottoNumber" destination="Et7-2A-wfm" collectionClass="NSMutableArray" id="Vwe-4k-EWW"/>
+                        <outletCollection property="lottoNumber" destination="aCc-JH-UHH" collectionClass="NSMutableArray" id="qT8-7C-yH7"/>
+                        <outletCollection property="lottoNumber" destination="bWN-wc-7lY" collectionClass="NSMutableArray" id="TVf-gW-5WI"/>
+                        <outletCollection property="lottoNumber" destination="hgv-l7-vhe" collectionClass="NSMutableArray" id="xLA-Ex-xVt"/>
+                        <outletCollection property="lottoNumber" destination="CMN-b0-lYc" collectionClass="NSMutableArray" id="07L-gC-TAd"/>
+                        <outletCollection property="lottoNumber" destination="tXa-Vl-c3E" collectionClass="NSMutableArray" id="yOU-bO-4fZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xzl-7H-j6r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -244,7 +251,44 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VBh-6s-7Y2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2344.9275362318845" y="95.758928571428569"/>
+            <point key="canvasLocation" x="2390" y="96"/>
+        </scene>
+        <!--Location View Controller-->
+        <scene sceneID="pdS-eZ-dJw">
+            <objects>
+                <viewController storyboardIdentifier="LocationViewController" id="EMF-VJ-dRJ" customClass="LocationViewController" customModule="SeSAC2LectureNetworkBasic" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UPT-ia-Ktc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uWh-RJ-88a">
+                                <rect key="frame" x="20" y="64" width="374" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBrownColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="QPc-FR-e44"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Local Notification">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="0.0"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="btn_notification:" destination="EMF-VJ-dRJ" eventType="touchUpInside" id="wC7-Mk-Mt5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QBM-lN-pZJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QBM-lN-pZJ" firstAttribute="trailing" secondItem="uWh-RJ-88a" secondAttribute="trailing" constant="20" id="2sb-y6-fzU"/>
+                            <constraint firstItem="uWh-RJ-88a" firstAttribute="leading" secondItem="QBM-lN-pZJ" secondAttribute="leading" constant="20" id="vPh-WQ-vAk"/>
+                            <constraint firstItem="uWh-RJ-88a" firstAttribute="top" secondItem="QBM-lN-pZJ" secondAttribute="top" constant="20" id="y3p-KM-EoT"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sEJ-tu-3NW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3170" y="96"/>
         </scene>
     </scenes>
     <resources>

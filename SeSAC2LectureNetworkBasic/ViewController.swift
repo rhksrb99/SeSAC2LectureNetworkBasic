@@ -9,9 +9,6 @@ import UIKit
 
 class ViewController: UIViewController, ViewPresentableProtocol{
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
 
     static let identifier: String = "ViewController"
     
@@ -42,6 +39,20 @@ class ViewController: UIViewController, ViewPresentableProtocol{
         view.backgroundColor = backgroundColor
     }
     
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // 해당 값이 helper의 nickname의 newValue에 들어간다.
+        UserDefaultsHelper.shared.nickname = "어른이"
+        
+        // 네비게이션 타이틀에 저장된 닉네임을 띄운다는 가정
+        title = UserDefaultsHelper.shared.nickname
+        
+        UserDefaultsHelper.shared.age = 24
+        
+        print(UserDefaultsHelper.shared.age)
+        
+    }
 }
 

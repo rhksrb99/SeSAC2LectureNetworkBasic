@@ -6,10 +6,15 @@
 //
 
 import UIKit
+// 애플 내부 라이브러리를 첫번째,
+// 한칸 띄우고 외부 라이브러리를 알파벳 순서대로 정렬
+import Alamofire
+import SwiftyJSON
 
 class LottoViewController: UIViewController {
     
-
+    @IBOutlet var lottoNumber: [UILabel]!
+    
 //    @IBOutlet weak var lottoPickerView: UIPickerView!
     @IBOutlet weak var tf_number: UITextField!
       
@@ -21,7 +26,10 @@ class LottoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // 문자의 내용중 일부를 가져와서 텍스트필드에 출력
+        // 인증번호가 대표적
+        tf_number.textContentType = .oneTimeCode
+        
         // 텍스트필드를 클릭했을 때 지정한 뷰가 보여짐.
         tf_number.inputView = lottoPickerView
         // 커서 숨기기
@@ -29,7 +37,34 @@ class LottoViewController: UIViewController {
         
         lottoPickerView.delegate = self
         lottoPickerView.dataSource = self
-        
+        requestLotto(number: 986)
+    }
+    
+    func requestLotto(number:Int) {
+        let url = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=\(number)"
+        AF.request(url, method: .get).validate(statusCode: 200..<400).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print("JSON: \(json)")
+                
+                for i in 1...6{
+                    self.lottoNumber[i-1].text = String(json["drwtNo\(i)"].intValue)
+                }
+                
+                let bonus = json["bnusNo"].intValue
+                self.lottoNumber[6].text = String(bonus)
+//                print(bonus)
+                
+                let date = json["drwNoDate"].stringValue
+//                print(date)
+                
+                self.tf_number.text = date
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 
 }
@@ -48,10 +83,12 @@ extension LottoViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        tf_number.text = "\(numberList[row])회차"
+        // 셀을 클릭했을 때도 requestLotto의 함수를 호출
+        requestLotto(number: numberList[row])
+        
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "\(numberList[row])번쨰"
+        return "\(numberList[row])회차"
     }
 }

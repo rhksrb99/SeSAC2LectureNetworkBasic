@@ -27,6 +27,8 @@ class TranslateViewController: UIViewController {
         
         placeHolder(tv: tf_userInput)
         
+        tf_userInput.font = UIFont(name: "BMJUA_otf", size: 15)
+        
     }
     
     func placeHolder(tv:UITextView) {
