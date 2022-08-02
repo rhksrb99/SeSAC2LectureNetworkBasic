@@ -28,6 +28,7 @@
 		92E9DF5228975FA9004A7A07 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E9DF5128975FA9004A7A07 /* UserDefaultsHelper.swift */; };
 		92E9DF5528977CDD004A7A07 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 92E9DF5428977CDD004A7A07 /* Alamofire */; };
 		92E9DF5828977CF0004A7A07 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 92E9DF5728977CF0004A7A07 /* SwiftyJSON */; };
+		92E9DF802898BD38004A7A07 /* BoxOfficeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E9DF7F2898BD38004A7A07 /* BoxOfficeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		92E9DF4C2897529F004A7A07 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 		92E9DF4F289757AF004A7A07 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		92E9DF5128975FA9004A7A07 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
+		92E9DF7F2898BD38004A7A07 /* BoxOfficeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				9275F58C2890E4D400D9EA46 /* ListTableViewCell.swift */,
 				9275F58D2890E4D400D9EA46 /* ListTableViewCell.xib */,
 				9275F58A2890E20300D9EA46 /* SearchViewController.swift */,
+				92E9DF7F2898BD38004A7A07 /* BoxOfficeModel.swift */,
 				9275F57F2890DD8400D9EA46 /* Assets.xcassets */,
 				9275F5812890DD8400D9EA46 /* LaunchScreen.storyboard */,
 				9275F5842890DD8400D9EA46 /* Info.plist */,
@@ -219,6 +222,7 @@
 				9275F57B2890DD8200D9EA46 /* ViewController.swift in Sources */,
 				92E9DF5228975FA9004A7A07 /* UserDefaultsHelper.swift in Sources */,
 				92E9DF4028923AA6004A7A07 /* WebViewController.swift in Sources */,
+				92E9DF802898BD38004A7A07 /* BoxOfficeModel.swift in Sources */,
 				9275F5772890DD8200D9EA46 /* AppDelegate.swift in Sources */,
 				9275F58B2890E20300D9EA46 /* SearchViewController.swift in Sources */,
 				92E9DF3C2892236E004A7A07 /* LottoViewController.swift in Sources */,
