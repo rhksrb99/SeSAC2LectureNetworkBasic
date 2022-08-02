@@ -50,6 +50,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         searchTableView.register(UINib(nibName: ListTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: ListTableViewCell.reuseIdentifier)
         
         searchBar.delegate = self
+        
+        // 어제 날짜 가져와서 넘버에 넣어주기.------------------------------
         requestBoxOffice(number: "20220801")
     }
     
@@ -67,8 +69,9 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     let movieNm = movie["movieNm"].stringValue
                     let openDt = movie["openDt"].stringValue
                     let audiAcc = movie["audiAcc"].stringValue
+                    let rank = movie["rank"].stringValue
                     
-                    let data = BoxOfficeModel(movieTitle: movieNm, releaseDate: openDt, totalCount: audiAcc)
+                    let data = BoxOfficeModel(movieTitle: movieNm, releaseDate: openDt, totalCount: audiAcc, rank: rank)
                     
                     self.list.append(data)
                 }
@@ -100,8 +103,10 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.reuseIdentifier, for: indexPath) as? ListTableViewCell else { return UITableViewCell() }
         
         cell.backgroundColor = .clear
-        cell.lb_title.font = .boldSystemFont(ofSize: 20)
-        cell.lb_title.text = "\(list[indexPath.row].movieTitle) : \(list[indexPath.row].releaseDate)"
+        cell.lb_title.font = .boldSystemFont(ofSize: 18)
+        cell.lb_title.text = "\(list[indexPath.row].movieTitle)"
+        cell.lb_rank.text = "\(list[indexPath.row].rank)"
+        cell.lb_total.text = "\(list[indexPath.row].totalCount)명"
         
         return cell
     }

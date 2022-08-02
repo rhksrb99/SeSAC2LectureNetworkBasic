@@ -11,6 +11,7 @@ class ListTableViewCell: UITableViewCell {
 
 //    static let identifier = "ListTableViewCell"
     
+    @IBOutlet weak var lb_rank: UILabel!
     @IBOutlet weak var lb_title: UILabel!
-    
+    @IBOutlet weak var lb_total: UILabel!
 }

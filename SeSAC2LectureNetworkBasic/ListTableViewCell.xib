@@ -16,21 +16,40 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZ0-sf-a84">
-                        <rect key="frame" x="139" y="11.5" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZ0-sf-a84">
+                        <rect key="frame" x="52" y="10" width="141" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmE-01-cHf">
+                        <rect key="frame" x="16" y="11" width="28" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13q-RQ-QP4">
+                        <rect key="frame" x="262.5" y="11" width="41.5" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="tZ0-sf-a84" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="dSv-ro-Ifp"/>
-                    <constraint firstItem="tZ0-sf-a84" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="jFv-0M-Poh"/>
+                    <constraint firstAttribute="bottom" secondItem="13q-RQ-QP4" secondAttribute="bottom" constant="12" id="6ZZ-Id-E1U"/>
+                    <constraint firstAttribute="bottom" secondItem="zmE-01-cHf" secondAttribute="bottom" constant="12" id="Avw-tD-JWC"/>
+                    <constraint firstItem="tZ0-sf-a84" firstAttribute="leading" secondItem="zmE-01-cHf" secondAttribute="trailing" constant="20" id="Mm4-oz-qdc"/>
+                    <constraint firstItem="zmE-01-cHf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="N8r-fU-PsH"/>
+                    <constraint firstItem="tZ0-sf-a84" firstAttribute="top" secondItem="zmE-01-cHf" secondAttribute="top" id="Op2-6g-lvE"/>
+                    <constraint firstAttribute="trailing" secondItem="13q-RQ-QP4" secondAttribute="trailing" constant="16" id="PAQ-p1-eje"/>
+                    <constraint firstItem="tZ0-sf-a84" firstAttribute="bottom" secondItem="zmE-01-cHf" secondAttribute="bottom" id="Zzx-nu-Btg"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="lb_rank" destination="zmE-01-cHf" id="fPT-ih-puG"/>
                 <outlet property="lb_title" destination="tZ0-sf-a84" id="IKZ-QN-38C"/>
+                <outlet property="lb_total" destination="13q-RQ-QP4" id="K7Q-7J-qwp"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="125.89285714285714"/>
         </tableViewCell>

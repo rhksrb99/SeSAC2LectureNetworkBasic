@@ -23,6 +23,7 @@ class LottoViewController: UIViewController {
     // 코드로 뷰를 만드는 기능이 훨씬 더 많이 남아있다.
     
     let numberList: [Int] = Array(1...1025).reversed()
+    var count = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +38,25 @@ class LottoViewController: UIViewController {
         
         lottoPickerView.delegate = self
         lottoPickerView.dataSource = self
-        requestLotto(number: 986)
+        date()
+        requestLotto(number: count)
+        
+        
+    }
+    
+    func date() {
+        let format = DateFormatter()
+        format.dateFormat = "yyyyMMdd"
+        format.locale = Locale(identifier: Locale.current.identifier)
+        format.timeZone = TimeZone(identifier: TimeZone.current.identifier)
+        let lastDate = Date()
+        let firstDate = format.date(from: "20020714") ?? Date()
+        
+        let interval = lastDate.timeIntervalSince(firstDate)
+        let result = Int(interval / 86400)
+        count = Int((result/7))
+        
+        
     }
     
     func requestLotto(number:Int) {
@@ -61,8 +80,23 @@ class LottoViewController: UIViewController {
                 
                 self.tf_number.text = date
                 
+                
+                if json["returnValue"].stringValue == "fail" {
+                    // 동영님의 결과물..
+//                    var newCount = self.count - 1
+//                    self.count = newCount
+//                    self.requestLotto(number: self.count)
+                    repeat{
+                        var newCount = self.count - 1
+                        self.count = newCount
+                        self.requestLotto(number: self.count)
+                        print(newCount)
+                    }while json["returnValue"].stringValue == "success"
+                }
+                
             case .failure(let error):
                 print(error)
+                
             }
         }
     }
