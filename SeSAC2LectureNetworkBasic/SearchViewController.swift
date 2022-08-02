@@ -36,7 +36,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     // BoxOffice를 담을 배열
     var list: [BoxOfficeModel] = []
-    
+    var defaultDate = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,9 +50,25 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         searchTableView.register(UINib(nibName: ListTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: ListTableViewCell.reuseIdentifier)
         
         searchBar.delegate = self
-        
+        date()
         // 어제 날짜 가져와서 넘버에 넣어주기.------------------------------
-        requestBoxOffice(number: "20220801")
+        requestBoxOffice(number: defaultDate)
+    }
+    
+    func date(){
+        let today = Date()
+        let format = DateFormatter()
+        format.dateFormat = "yyyyMMdd"
+        format.locale = Locale(identifier: Locale.current.identifier)
+        format.timeZone = TimeZone(identifier: TimeZone.current.identifier)
+
+        let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: today)
+        
+        defaultDate = format.string(from: yesterday!)
+        
+        print(defaultDate)
+        
+        
     }
     
     func requestBoxOffice(number: String) {
