@@ -34,6 +34,12 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var searchTableView: UITableView!
     
+    // 타입 어노테이션 vs 타입추론 = 누가 더 속도가 빠를지.
+    // 타입 어노테이션이 속도는 아주 조금 빠르지만
+    // 타입 추론으로 편하게 사용하는건 어떨까?
+    var nickname: String = ""
+    var username = ""
+    
     // BoxOffice를 담을 배열
     var list: [BoxOfficeModel] = []
     var defaultDate = ""
